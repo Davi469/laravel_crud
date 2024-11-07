@@ -1,0 +1,113 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.conteiner {
+    width: 80%;
+    margin: 20px auto;
+}
+
+#button {
+    margin-left: 5%;
+}
+
+.styled-table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+    min-width: 500px; 
+    
+    width: 90%; 
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    background-color: white;
+    border: 1px solid #009879;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #d4dbd3; 
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px; 
+}
+
+#button button {
+    height: 30px;
+    width: 80px;
+    border: none;
+    color: white;
+    background-color: #009879;
+    border-radius: 10px;
+}
+
+#button a {
+    color: white;
+}
+
+@media all and (max-width: 800px) {
+    @media all and (max-width: 800px) {
+        .styled-table {
+            display: block; 
+            overflow-x: auto; 
+        }
+    
+        .styled-table thead {
+            display: none; 
+        }
+    
+        .styled-table tbody tr {
+            display: block; 
+            margin-bottom: 20px; 
+            border: 1px solid #dad6eb; 
+            border-radius: 10px; 
+            background-color: #fff; 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            border: 2px solid #009879;
+        }
+    
+        .styled-table tbody tr td {
+            display: flex; 
+            justify-content: space-between; 
+            padding: 10px; 
+            text-align: left; 
+            overflow: hidden; 
+            word-wrap: break-word; 
+        }
+    
+        .styled-table tbody tr td:before {
+            content: attr(data-title); 
+            font-weight: bold; 
+            text-align: left; 
+            display: inline-block;
+            width: 50%; 
+            margin-right: 10px;
+        }
+        
+    }
+    
+    
+}
