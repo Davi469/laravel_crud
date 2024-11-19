@@ -29,22 +29,35 @@ class LivroController extends Controller
 
     public function store(StoreUpdateLivro $request)
     {
-
+        
+        if ($request->hasFile('image')) {
+           
+            $imagePath = $request->file('image')->store('livros', 'public');
+        } else {
+            
+            $imagePath = null;
+        }
+    
+       
         $created = $this->livro->create([
             'nome' => $request->input('nome'),
             'autor' => $request->input('autor'),
             'editora' => $request->input('editora'),
             'data_publicacao' => $request->input('data_publicacao'),
             'preco' => $request->input('preco'),
+            'image' => $imagePath, 
         ]);
-        
+    
+       
         if ($created) {
             $livros = Livro::all(); 
+            
             return view('livros', ['livros' => $livros]);
         }
-    
+        
         return redirect()->back()->with('message', 'Erro ao criar!');
     }
+    
     
 
     public function show(Livro $livro)

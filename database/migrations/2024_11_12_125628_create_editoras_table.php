@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('livros', function (Blueprint $table) {
-            $table->string('image')->nullable();
+        Schema::create('editoras', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->string('telefone');
+            $table->string('email');
+            $table->string('site');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('livros', function (Blueprint $table) {
-            $table->dropColumn('image');
-        });
+        Schema::dropIfExists('editoras');
     }
 };

@@ -17,7 +17,6 @@
     @endforeach
 @endif
 
-<h2>Criar</h2>
 <div class="card">
 <form class="card-form" action="{{ route('livros.store',)}}" method="post" enctype="multipart/form-data">
     @csrf
@@ -41,6 +40,11 @@
         <input class="input-field" type="text" name="preco" value="{{ old('preco')}}">
         <label class="input-label">Preço</label>
     </div>
+    <div class="input">
+        <input id="selecao" class="image-input" type="file" name="image" value="{{ old('image') }}">
+        <label for="selecao" style="color: #C39A7A" id="label">Imagem</label>
+    </div>
+    
     <div class="action">
         <button type="submit" class="action-button">Adicionar</button>
     </div>

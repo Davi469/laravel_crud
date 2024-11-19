@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,35 +18,35 @@
    
 	 <div class="card">
 		<div class="card-image">	
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgKW7Em1roppxAB12oqiFYVuv7074I89cLlw&s" alt="">
+			<img src="{{ Storage::url($livro->image) }}  ">
 		</div>
 		<form class="card-form" action="{{ route('livros.update',['livro' => $livro->id]) }}" method="post">
             @csrf
             <input type="hidden" name="_method" value="PUT">
 			<div class="input">
-                <input class="input-field"  type="text" name="nome" value="{{$livro->nome}}">
-				<label class="input-label">Titulo</label>
-			</div>
+				<input class="input-field" type="text" name="nome" value="{{$livro->nome}}" placeholder=" ">
+				<label class="input-label">Título</label>
+			</div>			
             <div class="input">
-                <input class="input-field" type="text" name="autor" value="{{$livro->autor}}">
+                <input class="input-field" type="text" name="autor" value="{{$livro->autor}}" placeholder=" ">
 				<label class="input-label">Autor</label>
 			</div>
             <div class="input">
-                <input class="input-field" type="text" name="editora" value="{{$livro->editora}}">
+                <input class="input-field focus:outline-none" type="text" name="editora" value="{{$livro->editora}}" placeholder=" ">
 				<label class="input-label">Editora</label>
 			</div>
             <div class="input">
-                <input class="input-field" type="text" name="data_publicacao" value="{{$livro->data_publicacao}}">
+                <input class="input-field" type="text" name="data_publicacao" value="{{$livro->data_publicacao}}" placeholder=" ">
 				<label class="input-label">Data de publicação</label>
 			</div>
             <div class="input">
-                <input class="input-field" type="text" name="preco" value="{{$livro->preco}}">
+                <input class="input-field" type="text" name="preco" value="{{$livro->preco}}" placeholder=" ">
 				<label class="input-label">Preço</label>
 			</div>
 			<div class="action">
 				<button type="submit" class="action-button">Atualizar</button>
 			</div>
-            <p class="card-info">By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+           
 		</form>
        
 	
@@ -54,3 +55,4 @@
 
 </body>
 </html>
+</x-app-layout>

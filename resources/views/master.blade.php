@@ -6,7 +6,6 @@
     <title>CRUD</title>
     <link href="/css/funcionarios.css" rel="stylesheet" type="text/css" />
     @yield('page_css')
-    @yield('delete_css')
 </head>
 <body>
    <div class="conteiner">

@@ -4,27 +4,34 @@
     padding: 0;
 }
 
+
 .conteiner {
     width: 80%;
-    margin: 20px auto;
+    margin: 50px auto;
+}
+#conteiner {
+    margin-left: 30%;
+    padding-top: 140px;
+    margin-right: 30px;
+
 }
 
 #button {
-    margin-left: 5%;
+    margin-left: 10%;
 }
 
 .styled-table {
-    margin: 20px auto;
+    margin: 20px 100px auto 30px;
     border-collapse: collapse;
     font-size: 1.2em;
     font-family: 'Open Sans', sans-serif;
     min-width: 500px; 
     
-    width: 90%; 
+    width: 80%; 
 }
 
 .styled-table thead tr {
-    background-color: #009879;
+    background-color: #5a6697;
     color: #ffffff;
     text-align: left;
 }
@@ -37,20 +44,27 @@
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
     transition: background-color 0.3s, box-shadow 0.3s; 
-    background-color: white;
-    border: 1px solid #009879;
+    background-color: #5a669753 ;
+    border: 1px solid #5a6697;
+    
+    
+}
+.styled-table td {
+    color: #303151;
+  
+
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #f5efeb;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #5a6697;
 }
 
 .styled-table tbody tr:hover {
-    background-color: #d4dbd3; 
+    background-color: #5a669788 ;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px; 
 }
 
@@ -59,12 +73,24 @@
     width: 80px;
     border: none;
     color: white;
-    background-color: #009879;
+    background-color: #5a6697;
     border-radius: 10px;
 }
 
 #button a {
     color: white;
+}
+#Imagem img{
+    width: 60px;
+    border-radius: 5px;
+}
+#shadow {
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+#shadow:hover {
+   
+    width: 70px;
 }
 
 @media all and (max-width: 800px) {
@@ -86,7 +112,7 @@
             background-color: #fff; 
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             padding: 10px;
-            border: 2px solid #009879;
+            border: 2px solid #5a6697;
         }
     
         .styled-table tbody tr td {
@@ -110,4 +136,10 @@
     }
     
     
+}
+
+@media screen and (max-width: 1150px) {
+    #conteiner{
+        margin-left: 5%
+    }
 }
