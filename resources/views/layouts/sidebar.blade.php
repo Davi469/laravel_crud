@@ -50,7 +50,7 @@
                         <i class="ri-pie-chart-2-fill"></i>
                         <span>Dashboard</span>
                      </a>
-                     
+                 
                      <a href="#" class="sidebar__link">
                         <i class="ri-wallet-3-fill"></i>
                         <span>My Wallet</span>
