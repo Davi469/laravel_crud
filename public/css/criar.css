@@ -12,7 +12,15 @@ body {
 }
 
 
-
+#editora_id {
+	border: 2px solid #5a6697;
+	height: 40px;
+	border-radius: 5px;
+	color: #5a6697;
+	font-size: 15px;
+	margin-top: 24px ;
+	margin-left: 10%;
+}
 input {
 	appearance: none;
 	border-radius: 0;
@@ -113,10 +121,15 @@ input {
 #label {
 	border: 2px solid #5a6697;
 	border-radius: 5px;
-	color: #fff;
+	color: #5a6697;
 	cursor: pointer;
 	padding: 6px 20px;
-	width: 100px;
+	width: 150px;
+	text-align: center;
+}
+#botoes {
+	display: flex;
+	padding-left: 15%;
 }
 
 

@@ -9,8 +9,9 @@
     <link href="/css/dashboard.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    @section('content')
     <img src="/storage/livros/banner.png" alt="" style="width: 90%; margin: 30px auto; border-radius: 40px">
-
+ 
 </body>
 </html>
 </x-app-layout>

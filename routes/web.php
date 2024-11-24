@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LivroController;
+use App\Http\Controllers\CategoriaController;
 
 use App\Http\Controllers\EditoraController;
 use Illuminate\Support\Facades\Route;
@@ -15,17 +16,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/editoras', function () {
-    return view('editoras');
-})->name('editoras');
-
-Route::get('/livros', function () {
-    return view('livros');
-})->name('livros');
-
-Route::get('/estoque', function () {
-    return view('estoque');
-})->name('estoque');
 
 
 Route::middleware('auth')->group(function () {
@@ -41,13 +31,22 @@ Route::get('/livros/{livro}/edit', [LivroController::class,'edit'])->name('livro
 Route::put('/livros/{livro}', [LivroController::class,'update'])->name('livros.update');
 Route::delete('/livros/{livro}', [LivroController::class,'destroy'])->name('livros.destroy');
 
-Route::get('/editoras', [EditoraController::class,'index'])->name('editoras');
+Route::get('/editoras', [EditoraController::class,'index'])->name('editoras.index');
 Route::get('/editoras/create', [EditoraController::class,'create'])->name('editoras.create');
 Route::post('/editoras/create', [EditoraController::class,'store'])->name('editoras.store');
 Route::get('/editoras/{editora}', [EditoraController::class,'show'])->name('editoras.show');
 Route::get('/editoras/{editora}/edit', [EditoraController::class,'edit'])->name('editoras.edit');
 Route::put('/editoras/{editora}', [EditoraController::class,'update'])->name('editoras.update');
 Route::delete('/editoras/{editora}', [EditoraController::class,'destroy'])->name('editoras.destroy');
+
+
+Route::get('/categorias', [CategoriaController::class,'index'])->name('categorias.index');
+Route::get('/categorias/create', [CategoriaController::class,'create'])->name('categorias.create');
+Route::post('/categorias/create', [CategoriaController::class,'store'])->name('categorias.store');
+Route::get('/categorias/{categoria}', [CategoriaController::class,'show'])->name('categorias.show');
+Route::get('/categorias/{categoria}/edit', [CategoriaController::class,'edit'])->name('categorias.edit');
+Route::put('/categorias/{categoria}', [CategoriaController::class,'update'])->name('categorias.update');
+Route::delete('/categorias/{categoria}', [CategoriaController::class,'destroy'])->name('categorias.destroy');
 
 });
 

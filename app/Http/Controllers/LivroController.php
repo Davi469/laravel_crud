@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Editora;
 
 use Illuminate\Http\Request;
 use App\Models\Livro;
@@ -18,64 +19,66 @@ class LivroController extends Controller
 
     public function index()
     {
-        $livros = Livro::all();
+        $livros = Livro::with('editora')->get();
         return view('livros', ['livros' => $livros]);
     }
 
     public function create()
     {
-        return view('livro_create');
+        $editoras = Editora::all();
+        return view('Create/livro_create', compact('editoras'));
     }
 
     public function store(StoreUpdateLivro $request)
     {
-        
+
         if ($request->hasFile('image')) {
-           
+
             $imagePath = $request->file('image')->store('livros', 'public');
         } else {
-            
+
             $imagePath = null;
         }
-    
-       
+
+
         $created = $this->livro->create([
             'nome' => $request->input('nome'),
             'autor' => $request->input('autor'),
-            'editora' => $request->input('editora'),
+            'editora_id' => $request->input('editora_id'),
             'data_publicacao' => $request->input('data_publicacao'),
             'preco' => $request->input('preco'),
-            'image' => $imagePath, 
+            'image' => $imagePath,
         ]);
-    
-       
+
+
         if ($created) {
-            $livros = Livro::all(); 
-            
-            return view('livros', ['livros' => $livros]);
+            $livros = Livro::all();
+
+            return redirect()->route('livros.index')->with('message', 'Livro criado com sucesso!');
+
         }
-        
+
         return redirect()->back()->with('message', 'Erro ao criar!');
     }
-    
-    
+
+
 
     public function show(Livro $livro)
     {
-        return view('livro_show', ['livro' => $livro]);
+        return view('Delete/livro_show', ['livro' => $livro]);
     }
 
     public function edit(Livro $livro)
     {
-       return view('livro_edit', ['livro' => $livro]);
+        return view('Edit/livro_edit', ['livro' => $livro]);
     }
 
     public function update(Request $request, string $id)
     {
         $updated = $this->livro->where('id', $id)->update($request->except(['_token', '_method']));
-        
-        if($updated) {
-            $livros = Livro::all(); 
+
+        if ($updated) {
+            $livros = Livro::all();
             return view('livros', ['livros' => $livros]);
         }
         return redirect()->back()->with('message', 'Erro ao atualizar!');

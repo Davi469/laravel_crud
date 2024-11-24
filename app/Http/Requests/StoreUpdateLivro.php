@@ -28,11 +28,6 @@ class StoreUpdateLivro extends FormRequest
                 'min:3',
                 'max:100000',
             ],
-            'editora' => [
-                'required',
-                'min:3',
-                'max:100',
-            ],
             'data_publicacao' => [
                 'required',
                 'min:3',

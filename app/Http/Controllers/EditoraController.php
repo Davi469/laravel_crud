@@ -24,7 +24,7 @@ class EditoraController extends Controller
 
     public function create()
     {
-        return view('editora_create');
+        return view('Create/editora_create');
     }
 
     public function store(StoreUpdateEditora $request)
@@ -50,12 +50,12 @@ class EditoraController extends Controller
 
     public function show(Editora $editora)
     {
-        return view('editora_show', ['editora' => $editora]);
+        return view('Delete/editora_show', ['editora' => $editora]);
     }
 
     public function edit(Editora $editora)
     {
-       return view('editora_edit', ['editora' => $editora]);
+       return view('Edit/editora_edit', ['editora' => $editora]);
     }
 
     public function update(Request $request, string $id)

@@ -6,14 +6,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CRUD</title>
-        <link href="/css/funcionarios.css" rel="stylesheet" type="text/css" />
+        <link href="/css/livros.css" rel="stylesheet" type="text/css" />
       
     </head>
     <body>
         <div class="main conteiner" id="main"></div>
         <div id="tabela">
      
-            <div id="conteiner" style="overflow-x: auto; max-width: 100%; border: 1px solid #ccc;">
+            <div id="conteiner" >
                 
                 <table class="styled-table">
                    
@@ -38,7 +38,7 @@
                             <td data-title="Nome">{{$livro->nome}}</td>
                             <td data-title="Autor">{{$livro->autor}}</td>
                             <td data-title="Preço">{{$livro->preco}}</td>
-                            <td data-title="Editora">{{$livro->editora}}</td>
+                            <td data-title="editora_id">{{ $livro->editora->nome ?? 'Sem editora' }}</td>
                             <td data-title="Data de publicação">{{$livro->data_publicacao}}</td>
                             <td>
                                 <div class="botoes">

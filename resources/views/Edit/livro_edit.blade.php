@@ -1,14 +1,18 @@
 <x-app-layout>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editar</title>
-    <link href="/css/editar.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link href="/css/editar.css" rel="stylesheet" />
+
+	</head>
+	<body>
+		
+
 @if (session()->has('message'))
     {{ session()->get('message') }}   
 @endif
@@ -32,10 +36,6 @@
 				<label class="input-label">Autor</label>
 			</div>
             <div class="input">
-                <input class="input-field focus:outline-none" type="text" name="editora" value="{{$livro->editora}}" placeholder=" ">
-				<label class="input-label">Editora</label>
-			</div>
-            <div class="input">
                 <input class="input-field" type="text" name="data_publicacao" value="{{$livro->data_publicacao}}" placeholder=" ">
 				<label class="input-label">Data de publicação</label>
 			</div>
@@ -53,6 +53,7 @@
 	</div>
 </div>
 
-</body>
-</html>
+	</body>
+	</html>
+
 </x-app-layout>

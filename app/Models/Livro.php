@@ -11,10 +11,14 @@ class Livro extends Model
     protected $fillable = [
         'nome',
         'autor',
-        'editora',
         'data_publicacao',
         'preco',
         'image',
+        'editora_id',
     ];
 
+    public function editora()
+    {
+        return $this->belongsTo(Editora::class, 'editora_id');
+    }
 }

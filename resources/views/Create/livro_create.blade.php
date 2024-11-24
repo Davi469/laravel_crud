@@ -29,10 +29,6 @@
         <label class="input-label">Autor</label>
     </div>
     <div class="input">
-        <input class="input-field" type="text" name="editora" value="{{ old('editora')}}">
-        <label class="input-label">Editora</label>
-    </div>
-    <div class="input">
         <input class="input-field" type="text" name="data_publicacao" value="{{ old('data_publicacao')}}">
         <label class="input-label">Data de publicação</label>
     </div>
@@ -40,9 +36,20 @@
         <input class="input-field" type="text" name="preco" value="{{ old('preco')}}">
         <label class="input-label">Preço</label>
     </div>
+    <div id="botoes">
     <div class="input">
         <input id="selecao" class="image-input" type="file" name="image" value="{{ old('image') }}">
-        <label for="selecao" style="color: #C39A7A" id="label">Imagem</label>
+        <label for="selecao"  id="label">Imagem</label>
+    </div>
+    <div>
+        
+        <select name="editora_id" id="editora_id" required>
+            <option value="">Selecione uma editora</option>
+            @foreach ($editoras as $editora)
+                <option value="{{ $editora->id }}">{{ $editora->nome }}</option>
+            @endforeach
+        </select>
+    </div>
     </div>
     
     <div class="action">
