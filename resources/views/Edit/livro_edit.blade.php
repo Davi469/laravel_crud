@@ -1,5 +1,6 @@
 <x-app-layout>
 
+
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -8,6 +9,11 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Document</title>
 		<link href="/css/editar.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+
+
+	
 
 	</head>
 	<body>
@@ -16,6 +22,14 @@
 @if (session()->has('message'))
     {{ session()->get('message') }}   
 @endif
+
+     <button id="botao_voltar" >
+		<i class="ri-arrow-left-line"></i>
+		<a href="{{route('livros.index')}}">
+		Voltar
+		</a>
+	 </button>
+
 
 <div class="container" >
 	
@@ -35,6 +49,18 @@
                 <input class="input-field" type="text" name="autor" value="{{$livro->autor}}" placeholder=" ">
 				<label class="input-label">Autor</label>
 			</div>
+			 <div class="input">
+        <select class="input-field" name="editora_id" required>
+            <option value="">Selecione uma editora</option>
+            @foreach ($editoras as $editora)
+                <option value="{{ $editora->id }}" 
+                        {{ $livro->editora_id == $editora->id ? 'selected' : '' }}>
+                    {{ $editora->nome }}
+                </option>
+            @endforeach
+        </select>
+        <label class="input-label">Editora</label>
+    </div>
             <div class="input">
                 <input class="input-field" type="text" name="data_publicacao" value="{{$livro->data_publicacao}}" placeholder=" ">
 				<label class="input-label">Data de publicação</label>
@@ -55,5 +81,4 @@
 
 	</body>
 	</html>
-
 </x-app-layout>

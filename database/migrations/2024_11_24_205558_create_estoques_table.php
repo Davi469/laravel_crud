@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estoque', function (Blueprint $table) {
+        Schema::create('estoques', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('livro_id')->constrained('livros');
+            $table->string('tipo');
+            $table->string('quantidade');
+            $table->string('responsavel');
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estoque');
+        Schema::dropIfExists('estoques');
     }
 };

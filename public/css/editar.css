@@ -95,6 +95,7 @@ input {
 }
 
 .action-button {
+	text-align: center;
 	font: inherit;
 	font-size: 1.25rem;
 	padding: 1em;
@@ -107,6 +108,15 @@ input {
 	&:focus {
 		outline: 0;
 	}
+}
+#botao_voltar {
+	position: fixed;
+	border: 3px solid #5a669786;
+	height: 30px;
+	width: 90px;
+	border-radius: 10px;
+	color: #5a6697da;
+	margin-left: 30px;
 }
 
 

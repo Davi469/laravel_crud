@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LivroController;
-use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\EstoqueController;
 
 use App\Http\Controllers\EditoraController;
 use Illuminate\Support\Facades\Route;
@@ -40,13 +40,13 @@ Route::put('/editoras/{editora}', [EditoraController::class,'update'])->name('ed
 Route::delete('/editoras/{editora}', [EditoraController::class,'destroy'])->name('editoras.destroy');
 
 
-Route::get('/categorias', [CategoriaController::class,'index'])->name('categorias.index');
-Route::get('/categorias/create', [CategoriaController::class,'create'])->name('categorias.create');
-Route::post('/categorias/create', [CategoriaController::class,'store'])->name('categorias.store');
-Route::get('/categorias/{categoria}', [CategoriaController::class,'show'])->name('categorias.show');
-Route::get('/categorias/{categoria}/edit', [CategoriaController::class,'edit'])->name('categorias.edit');
-Route::put('/categorias/{categoria}', [CategoriaController::class,'update'])->name('categorias.update');
-Route::delete('/categorias/{categoria}', [CategoriaController::class,'destroy'])->name('categorias.destroy');
+Route::get('/estoques', [EstoqueController::class,'index'])->name('estoques.index');
+Route::get('/estoques/create', [EstoqueController::class,'create'])->name('estoques.create');
+Route::post('/estoques/create', [EstoqueController::class,'store'])->name('estoques.store');
+Route::get('/estoques/{estoque}', [EstoqueController::class,'show'])->name('estoques.show');
+Route::get('/estoques/{estoque}/edit', [EstoqueController::class,'edit'])->name('estoques.edit');
+Route::put('/estoques/{estoque}', [EstoqueController::class,'update'])->name('estoques.update');
+Route::delete('/estoques/{estoque}', [EstoqueController::class,'destroy'])->name('estoques.destroy');
 
 });
 

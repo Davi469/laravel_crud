@@ -1,5 +1,5 @@
-<x-app-layout>
 
+<x-app-layout>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CRUD</title>
         <link href="/css/livros.css" rel="stylesheet" type="text/css" />
-      
+     
+
     </head>
     <body>
         <div class="main conteiner" id="main"></div>
@@ -41,9 +42,13 @@
                             <td data-title="editora_id">{{ $livro->editora->nome ?? 'Sem editora' }}</td>
                             <td data-title="Data de publicação">{{$livro->data_publicacao}}</td>
                             <td>
-                                <div class="botoes">
+                                <div class="botoes" style="display: flex">
                                     <a href="{{ route('livros.edit',['livro' => $livro->id])}}">Editar</a>
-                                    <a href="{{ route('livros.show',['livro' => $livro->id])}}">Mostrar</a>
+                                    <form action="{{ route('livros.destroy',['livro' => $livro->id]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button style="margin-left: 5px;">Deletar</button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
@@ -51,8 +56,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        
+        </div>    
     </body>
     </html>
 

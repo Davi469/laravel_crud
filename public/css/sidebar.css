@@ -88,13 +88,7 @@ body.dark-theme {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  margin-inline: 1.5rem;
-}
 
-.main {
-  padding-top: 5rem;
-}
 
 /*=============== HEADER ===============*/
 .header {
@@ -104,6 +98,7 @@ body.dark-theme {
   right: 0;
   z-index: var(--z-fixed);
   margin: .75rem;
+  display: flex;
 }
 
 .header__container {
@@ -117,6 +112,7 @@ body.dark-theme {
   padding-inline: 1.5rem;
   border-radius: 1rem;
   transition: background-color .4s;
+
 }
 
 .header__logo {
@@ -371,14 +367,12 @@ body.dark-theme {
     opacity: 0;
   }
 
-  .main {
-    padding-left: 340px;
-    padding-top: 8rem;
-    transition: padding .4s;
-  }
-
   /* Add padding left */
   .left-pd {
     padding-left: 114px;
   }
+  #header-toggle{
+    display: none;
+  }
+
 }

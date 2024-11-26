@@ -6,13 +6,11 @@
 
 
 .conteiner {
-    width: 80%;
+    width: 100%;
 }
 #conteiner {
-   
-    padding-top: 40px;
-   margin: 5% 10% 10%;
-
+    padding-top: 90px;
+    margin: 0 15%;
 }
 
 #button {
@@ -74,6 +72,7 @@
     color: white;
     background-color: #5a6697;
     border-radius: 10px;
+    text-align: center;
 }
 
 #button a {
@@ -82,18 +81,16 @@
 #Imagem img{
     width: 60px;
     border-radius: 5px;
+    transition: 0.4s;
 }
-#shadow {
-    transition: 0.5s;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
+
 #shadow:hover {
    
     width: 70px;
 }
 
-@media all and (max-width: 800px) {
-    @media all and (max-width: 800px) {
+
+    @media all and (max-width: 768px) {
         
     
         .styled-table thead {
@@ -132,6 +129,13 @@
         
     }
     
+    @media screen and (max-width: 1150px) {
     
-}
+        #conteiner{
+            margin-left: 10%;
+            margin-right: 10%;
+
+        }
+    
+    }
 

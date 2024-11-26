@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('preco');
            
             $table->string('data_publicacao');
-            $table->string('image');
             $table->timestamps();
         });
     }

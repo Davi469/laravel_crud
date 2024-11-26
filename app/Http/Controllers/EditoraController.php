@@ -50,7 +50,8 @@ class EditoraController extends Controller
 
     public function show(Editora $editora)
     {
-        return view('Delete/editora_show', ['editora' => $editora]);
+        $editoras = Editora::all();
+        return view('editoras', compact('editoras'));
     }
 
     public function edit(Editora $editora)

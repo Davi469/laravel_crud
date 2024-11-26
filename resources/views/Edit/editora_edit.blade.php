@@ -7,12 +7,19 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Editar</title>
         <link href="/css/editoraEditar.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
     </head>
     <body>
     @if (session()->has('message'))
         {{ session()->get('message') }}   
     @endif
-    
+    <button id="botao_voltar" >
+		<i class="ri-arrow-left-line"></i>
+		<a href="{{route('editoras.index')}}">
+		Voltar
+		</a>
+	 </button>
     <div class="container" >
         
        

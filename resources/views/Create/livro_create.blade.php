@@ -1,14 +1,16 @@
-@extends('master')
+<x-app-layout>
 
-@section('page_css')
-    <link href="/css/criar.css" rel="stylesheet">
-@endsection
-
-@section('content')
-
-
-
-@if (session()->has('message'))
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/criar.css">
+</head>
+<body>
+    @if (session()->has('message'))
     {{ session()->get('message') }}   
 @endif
 @if($errors->any())
@@ -36,7 +38,7 @@
         <input class="input-field" type="text" name="preco" value="{{ old('preco')}}">
         <label class="input-label">Preço</label>
     </div>
-    <div id="botoes">
+    
     <div class="input">
         <input id="selecao" class="image-input" type="file" name="image" value="{{ old('image') }}">
         <label for="selecao"  id="label">Imagem</label>
@@ -50,7 +52,7 @@
             @endforeach
         </select>
     </div>
-    </div>
+    
     
     <div class="action">
         <button type="submit" class="action-button">Adicionar</button>
@@ -58,6 +60,6 @@
     <p class="card-info">By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
 </form>
 </div>
-
-
-@endsection
+</body>
+</html>
+</x-app-layout>

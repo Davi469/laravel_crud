@@ -65,12 +65,14 @@ class LivroController extends Controller
 
     public function show(Livro $livro)
     {
-        return view('Delete/livro_show', ['livro' => $livro]);
+        $livros = Livro::all();
+        return view('livros', compact('livros'));
     }
 
     public function edit(Livro $livro)
     {
-        return view('Edit/livro_edit', ['livro' => $livro]);
+        $editoras = Editora::all();
+        return view('Edit/livro_edit', compact('livro', 'editoras'));
     }
 
     public function update(Request $request, string $id)
