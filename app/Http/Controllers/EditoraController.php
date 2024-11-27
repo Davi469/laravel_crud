@@ -59,7 +59,7 @@ class EditoraController extends Controller
        return view('Edit/editora_edit', ['editora' => $editora]);
     }
 
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateEditora $request, string $id)
     {
         $updated = $this->editora->where('id', $id)->update($request->except(['_token', '_method']));
         
@@ -74,6 +74,6 @@ class EditoraController extends Controller
     {
         $this->editora->where('id', $id)->delete();
 
-        return redirect()->route('editoras');
+        return redirect()->route('editoras.index');
     }
 }

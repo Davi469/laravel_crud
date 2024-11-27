@@ -11,15 +11,15 @@
 
     </head>
     <body>
-    @if (session()->has('message'))
+        @if (session()->has('message'))
         {{ session()->get('message') }}   
     @endif
-    <button id="botao_voltar" >
-		<i class="ri-arrow-left-line"></i>
-		<a href="{{route('editoras.index')}}">
-		Voltar
-		</a>
-	 </button>
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    @endif
+   
     <div class="container" >
         
        
@@ -32,20 +32,21 @@
                     <label class="input-label">Nome</label>
                 </div>			
                 <div class="input">
-                    <input class="input-field" type="text" name="autor" value="{{$editora->telefone}}" placeholder=" ">
+                    <input class="input-field" type="text" name="telefone" value="{{$editora->telefone}}" placeholder=" ">
                     <label class="input-label">Telefone</label>
                 </div>
                 <div class="input">
-                    <input class="input-field focus:outline-none" type="text" name="editora" value="{{$editora->email}}" placeholder=" ">
+                    <input class="input-field focus:outline-none" type="text" name="email" value="{{$editora->email}}" placeholder=" ">
                     <label class="input-label">E-mail</label>
                 </div>
                 <div class="input">
-                    <input class="input-field" type="text" name="data_publicacao" value="{{$editora->site}}" placeholder=" ">
+                    <input class="input-field" type="text" name="site" value="{{$editora->site}}" placeholder=" ">
                     <label class="input-label">Site</label>
                 </div>
                 <div class="action">
                     <button type="submit" class="action-button">Atualizar</button>
                 </div>
+                
                
             </form>
            

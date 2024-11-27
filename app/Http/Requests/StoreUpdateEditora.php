@@ -23,6 +23,9 @@ class StoreUpdateEditora extends FormRequest
     {
         return [
             'nome' => 'required|min:3|max:255',
+            'telefone' => 'required|min:11|max:20',
+            'email' => 'required|min:11|max:50',
+            'site' => 'required|min:3|max:50',
         ];
     }
 }

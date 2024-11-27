@@ -39,7 +39,11 @@
                             <td>
                                 <div class="botoes">
                                     <a href="{{ route('editoras.edit',['editora' => $editora->id])}}">Editar</a>
-                                    <a href="{{ route('editoras.show',['editora' => $editora->id])}}">Mostrar</a>
+                                    <form action="{{ route('editoras.destroy',['editora' => $editora->id]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button style="margin-left: 5px;">Deletar</button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>

@@ -22,6 +22,10 @@ class StoreUpdateEstoque extends FormRequest
     public function rules(): array
     {
         return [
+            'livro_id' => 'required',
+            'tipo' => 'required',
+            'quantidade' => 'required|min:1|max:50',
+            'responsavel' => 'required|min:3|max:60',
         
         ];
     }

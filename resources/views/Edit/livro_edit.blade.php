@@ -19,16 +19,16 @@
 	<body>
 		
 
-@if (session()->has('message'))
-    {{ session()->get('message') }}   
-@endif
+		@if (session()->has('message'))
+        {{ session()->get('message') }}   
+    @endif
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    @endif
 
-     <button id="botao_voltar" >
-		<i class="ri-arrow-left-line"></i>
-		<a href="{{route('livros.index')}}">
-		Voltar
-		</a>
-	 </button>
+    
 
 
 <div class="container" >
@@ -70,10 +70,12 @@
 				<label class="input-label">Preço</label>
 			</div>
 			<div class="action">
+				
 				<button type="submit" class="action-button">Atualizar</button>
 			</div>
            
 		</form>
+		
        
 	
 	</div>

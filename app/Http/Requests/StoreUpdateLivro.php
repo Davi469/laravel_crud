@@ -22,22 +22,23 @@ class StoreUpdateLivro extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required|min:3|max:255',
+            'nome' => 'required|min:2|max:70',
             'autor' => [
                 'required',
-                'min:3',
-                'max:100000',
+                'min:2',
+                'max:30',
             ],
             'data_publicacao' => [
                 'required',
-                'min:3',
-                'max:100000',
+                'min:6',
+                'max:15',
             ],
             'preco' => [
                 'required',
-                'min:3',
-                'max:100000',
+                'min:2',
+                'max:10',
             ],
+            'editora_id' => 'required',
         ];
     }
 }

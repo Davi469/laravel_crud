@@ -75,7 +75,7 @@ class LivroController extends Controller
         return view('Edit/livro_edit', compact('livro', 'editoras'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateLivro $request, string $id)
     {
         $updated = $this->livro->where('id', $id)->update($request->except(['_token', '_method']));
 

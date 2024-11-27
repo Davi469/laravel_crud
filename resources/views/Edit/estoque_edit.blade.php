@@ -11,15 +11,15 @@
 
     </head>
     <body>
-    @if (session()->has('message'))
+        @if (session()->has('message'))
         {{ session()->get('message') }}   
     @endif
-    <button id="botao_voltar" >
-		<i class="ri-arrow-left-line"></i>
-		<a href="{{route('estoques.index')}}">
-		Voltar
-		</a>
-	 </button>
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    @endif
+   
     <div class="container" >
         
        

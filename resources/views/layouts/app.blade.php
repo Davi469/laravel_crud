@@ -12,11 +12,20 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="css/livros.css" rel="stylesheet" />
         <link href="css/sidebar.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+
 
         
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+
+            i{
+                font-size: 35px;
+                color: #f5efeb
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 white:bg-gray-900" style="background-color: #f5efeb ">

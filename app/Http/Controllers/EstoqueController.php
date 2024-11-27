@@ -64,7 +64,7 @@ class EstoqueController extends Controller
         return view('Edit/estoque_edit', compact('estoque', 'livros'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateEstoque $request, string $id)
     {
         $updated = $this->estoque->where('id', $id)->update($request->except(['_token', '_method']));
 
