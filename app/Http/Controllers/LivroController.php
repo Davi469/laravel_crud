@@ -54,7 +54,7 @@ class LivroController extends Controller
         if ($created) {
             $livros = Livro::all();
 
-            return redirect()->route('livros.index')->with('message', 'Livro criado com sucesso!');
+            return redirect()->route('livros.index')->with('success', 'Livro criado com sucesso!');
 
         }
 
@@ -90,6 +90,6 @@ class LivroController extends Controller
     {
         $this->livro->where('id', $id)->delete();
 
-        return redirect()->route('livros.index');
+        return redirect()->route('livros.index')->with('excluido', 'Livro excluido com sucesso!');
     }
 }

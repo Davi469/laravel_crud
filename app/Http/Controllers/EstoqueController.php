@@ -43,7 +43,7 @@ class EstoqueController extends Controller
         if ($created) {
             $estoques = Estoque::all();
 
-            return redirect()->route('estoques.index')->with('message', 'Estoque criado com sucesso!');
+            return redirect()->route('estoques.index')->with('success', 'Estoque criado com sucesso!');
 
         }
 
@@ -79,6 +79,6 @@ class EstoqueController extends Controller
     {
         $this->estoque->where('id', $id)->delete();
 
-        return redirect()->route('estoques.index');
+        return redirect()->route('estoques.index')->with('excluido', 'Estoque excluido com sucesso!');
     }
 }

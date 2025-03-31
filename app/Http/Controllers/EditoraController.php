@@ -40,7 +40,7 @@ class EditoraController extends Controller
         if ($created) {
             $editoras = Editora::all(); 
             
-            return view('editoras', ['editoras' => $editoras]);
+            return redirect()->route('editoras.index')->with('success', 'Editora criado com sucesso!');
         }
         
         return redirect()->back()->with('message', 'Erro ao criar!');
@@ -74,6 +74,6 @@ class EditoraController extends Controller
     {
         $this->editora->where('id', $id)->delete();
 
-        return redirect()->route('editoras.index');
+        return redirect()->route('editoras.index')->with('excluido', 'Editora excluida com sucesso!');
     }
 }

@@ -6,12 +6,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="css/livros.css" rel="stylesheet" />
-        <link href="css/sidebar.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
 
 
@@ -28,7 +27,7 @@
         </style>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 white:bg-gray-900" style="background-color: #f5efeb ">
+        <div class="min-h-screen bg-gray-100 white:bg-gray-900" style="background-color: white ">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -44,5 +43,6 @@
                 {{ $slot }}
             </main>
         </div>
+        
     </body>
 </html>

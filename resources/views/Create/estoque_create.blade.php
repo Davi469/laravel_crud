@@ -49,7 +49,7 @@
 <div class="action">
     <button type="submit" class="action-button">Adicionar</button>
 </div>
-<p class="card-info">By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+<p class="card-info">Preencha os campos abaixo para adicionar um novo estoque ao catálogo.</p>
 </form>
 </div>
 </body>

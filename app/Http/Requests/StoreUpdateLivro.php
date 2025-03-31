@@ -31,7 +31,7 @@ class StoreUpdateLivro extends FormRequest
             'data_publicacao' => [
                 'required',
                 'min:6',
-                'max:15',
+                'max:20',
             ],
             'preco' => [
                 'required',

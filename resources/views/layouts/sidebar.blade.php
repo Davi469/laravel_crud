@@ -11,29 +11,20 @@
       <link rel="stylesheet" href="/css/sidebar.css">
 
       <title>Responsive sidebar Menu | Dark/Light Mode - Bedimcode</title>
-
-      
-
    </head>
-
    <body>
       <!--=============== HEADER ===============-->
       <header class="header" id="header">
          <div class="header__container">
-           
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Cloud</span>
+            </a>
             
             <button class="header__toggle" id="header-toggle">
                <i class="ri-menu-line"></i>
             </button>
-           
-           
-           <a href="#" class="header__logo">
-            <i class="ri-book-open-fill"></i>
-            <span>BookShop</span>
-         </a>
          </div>
-
-         
       </header>
 
       <!--=============== SIDEBAR ===============-->
@@ -55,24 +46,29 @@
                   <h3 class="sidebar__title">MANAGE</h3>
 
                   <div class="sidebar__list">
-                     <a href="{{route('dashboard')}}" class="sidebar__link active-link">
-                        <i class="ri-home-2-fill"></i>
-                        <span>Inicio</span>
+                     <a href="#" class="sidebar__link active-link">
+                        <i class="ri-pie-chart-2-fill"></i>
+                        <span>Dashboard</span>
                      </a>
                      
-                     <a href="{{route('livros.index')}}" class="sidebar__link">
-                        <i class="ri-book-open-fill"></i>
-                        <span>Livros</span>
+                     <a href="#" class="sidebar__link">
+                        <i class="ri-wallet-3-fill"></i>
+                        <span>My Wallet</span>
                      </a>
 
-                     <a href="{{route('editoras.index')}}" class="sidebar__link">
-                        <i class="ri-contacts-book-2-fill"></i>
-                        <span>Editoras</span>
+                     <a href="#" class="sidebar__link">
+                        <i class="ri-calendar-fill"></i>
+                        <span>Calendar</span>
                      </a>
 
-                     <a href="{{route('estoques.index')}}" class="sidebar__link">
-                        <i class="ri-archive-2-fill"></i>
-                        <span>Estoque</span>
+                     <a href="#" class="sidebar__link">
+                        <i class="ri-arrow-up-down-line"></i>
+                        <span>Recent Transactions</span>
+                     </a>
+
+                     <a href="#" class="sidebar__link">
+                        <i class="ri-bar-chart-box-fill"></i>
+                        <span>Statistics</span>
                      </a>
                   </div>
                </div>
@@ -83,7 +79,17 @@
                   <div class="sidebar__list">
                      <a href="#" class="sidebar__link">
                         <i class="ri-settings-3-fill"></i>
-                        <span>Configurações</span>
+                        <span>Settings</span>
+                     </a>
+
+                     <a href="#" class="sidebar__link">
+                        <i class="ri-mail-unread-fill"></i>
+                        <span>My Messages</span>
+                     </a>
+
+                     <a href="#" class="sidebar__link">
+                        <i class="ri-notification-2-fill"></i>
+                        <span>Notifications</span>
                      </a>
                   </div>
                </div>
@@ -104,12 +110,8 @@
          </div>
       </nav>
 
-      <!--=============== MAIN ===============-->
-      <main class="main container" id="main">
-        
-      </main>
-      
+     
       <!--=============== MAIN JS ===============-->
-      <script src="js/sidebar.js"></script>
+      <script src="assets/js/sidebar.js"></script>
    </body>
 </html>
