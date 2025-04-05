@@ -80,7 +80,7 @@
                                     @method('DELETE')
                                     <button >Deletar</button>
                                 </form>
-                                <a href="{{ route('livros.edit', ['livro' => $livro->id]) }}" style="margin-left: 5px;">Editar</a>
+                                <a href="{{ route('livros.edit', ['livro' => $livro->id]) }}" style="margin-left: 10px;">Editar</a>
                             </div>
                         </td>
                     </tr>
