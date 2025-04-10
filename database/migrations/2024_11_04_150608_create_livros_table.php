@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('autor');
             $table->string('preco');
            
-            $table->string('data_publicacao');
+            $table->date(column:'data_publicacao');
             $table->timestamps();
         });
     }

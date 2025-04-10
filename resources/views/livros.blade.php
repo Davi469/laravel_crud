@@ -72,7 +72,7 @@
                         <td data-title="Autor">{{ $livro->autor }}</td>
                         <td data-title="Preço">{{ $livro->preco }}</td>
                         <td data-title="editora_id">{{ $livro->editora->nome ?? 'Sem editora' }}</td>
-                        <td data-title="Data de publicação">{{ $livro->data_publicacao }}</td>
+                        <td>{{ \Carbon\Carbon::parse($livro->data_publicacao)->format('d/m/Y') }}</td>
                         <td>
                             <div class="botoes" style="display: flex">
                                 <form action="{{ route('livros.destroy', ['livro' => $livro->id]) }}" method="POST">
