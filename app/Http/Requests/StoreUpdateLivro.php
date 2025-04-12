@@ -39,6 +39,7 @@ class StoreUpdateLivro extends FormRequest
                 'max:10',
             ],
             'editora_id' => 'required',
+            'categoria_id' => 'required',
         ];
     }
 }

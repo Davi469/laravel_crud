@@ -19,7 +19,7 @@
     {{ $error }}
 @endforeach
 @endif
-
+<div class="conteiner">
 <div class="card">
 <form class="card-form" action="{{ route('estoques.store',)}}" method="post">
 @csrf
@@ -51,6 +51,7 @@
 </div>
 <p class="card-info">Preencha os campos abaixo para adicionar um novo estoque ao catálogo.</p>
 </form>
+</div>
 </div>
 </body>
 </html>

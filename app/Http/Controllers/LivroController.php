@@ -5,6 +5,8 @@ use App\Models\Editora;
 
 use Illuminate\Http\Request;
 use App\Models\Livro;
+use App\Models\Categoria;
+
 use App\Http\Requests\StoreUpdateLivro;
 
 class LivroController extends Controller
@@ -26,8 +28,11 @@ class LivroController extends Controller
     public function create()
     {
         $editoras = Editora::all();
-        return view('Create/livro_create', compact('editoras'));
+        $categorias = Categoria::all();
+    
+        return view('Create/livro_create', compact('editoras', 'categorias'));
     }
+    
 
     public function store(StoreUpdateLivro $request)
     {
@@ -46,6 +51,7 @@ class LivroController extends Controller
             'autor' => $request->input('autor'),
             'editora_id' => $request->input('editora_id'),
             'data_publicacao' => $request->input('data_publicacao'),
+            'categoria_id' => $request->input('categoria_id'),
             'preco' => $request->input('preco'),
             'image' => $imagePath,
         ]);
@@ -72,8 +78,11 @@ class LivroController extends Controller
     public function edit(Livro $livro)
     {
         $editoras = Editora::all();
-        return view('Edit/livro_edit', compact('livro', 'editoras'));
+        $categorias = Categoria::all();
+    
+        return view('Edit/livro_edit', compact('livro', 'editoras', 'categorias'));
     }
+    
 
     public function update(StoreUpdateLivro $request, string $id)
     {

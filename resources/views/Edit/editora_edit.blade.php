@@ -20,7 +20,7 @@
         @endforeach
     @endif
    
-    <div class="container" >
+    <div class="container" style=" padding-top: 3%; margin: 0 auto;">
         
        
          <div class="card">

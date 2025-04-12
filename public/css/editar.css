@@ -57,9 +57,9 @@ input {
 	display: flex;
 	flex-direction: column-reverse;
 	position: relative;
-	padding-top: 1.5rem;
+	padding-top: 1.4rem;
 	&+.input {
-		margin-top: 1.5rem;
+		margin-top: 1rem;
 	}
 }
 
@@ -118,7 +118,6 @@ input {
 	color: #5a6697da;
 	margin-left: 330px;
 }
-
 
 @media (max-width: 768px) {
     .card {

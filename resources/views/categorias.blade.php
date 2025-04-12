@@ -14,9 +14,7 @@
     </head>
 
     <body>
-        <div id="bannerlivro" style="padding-top: 65px">
-        <img src="/storage/livros/bannerlivros.png" alt="" class=" rounded-2xl" style=" width: 70%; margin: 0 auto;">
-    </div>
+       
         <div class="main conteiner" id="main"></div>
         <div id="tabela">
 
@@ -33,7 +31,7 @@
                                     <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"
                                         stroke-linejoin="round" stroke-linecap="round"></path>
                                 </svg>
-                                <p class="text-xs font-semibold">Livro criado com sucesso!</p>
+                                <p class="text-xs font-semibold">Categoria criado com sucesso!</p>
                             </div>
                     @endif
                     @if (session('excluido'))
@@ -44,7 +42,7 @@
                                 <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"
                                     stroke-linejoin="round" stroke-linecap="round"></path>
                             </svg>
-                            <p class="text-xs font-semibold">Livro excluido com sucesso!</p>
+                            <p class="text-xs font-semibold">Categoria excluido com sucesso!</p>
                         </div>
             </div>
             @endif
@@ -52,39 +50,31 @@
 
 
             <div id="button">
-                <button><a href="{{ route('livros.create') }}">Adicionar</a></button>
+                <button><a href="{{ route('categorias.create') }}">Adicionar</a></button>
             </div>
             <thead>
                 <tr>
-                    <th style="border-top-left-radius: 10px;">Imagem</th>
+                    <th>ID</th>
                     <th>Nome</th>
-                    <th>Autor</th>
-                    <th>Preço</th>
-                    <th>Editora</th>
-                    <th>Data de publicação</th>
-                    <th>Categoria</th>
+                    <th>Descrição</th>
                     <th style="border-top-right-radius: 10px;">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($livros as $livro)
+                @foreach ($categorias as $categoria)
                     <tr>
-                        <td id="Imagem"><img src="{{ Storage::url($livro->image) }}" alt="" id="shadow">
-                        </td>
-                        <td data-title="Nome">{{ $livro->nome }}</td>
-                        <td data-title="Autor">{{ $livro->autor }}</td>
-                        <td data-title="Preço">{{ $livro->preco }}</td>
-                        <td data-title="editora_id">{{ $livro->editora->nome ?? 'Sem editora' }}</td>
-                        <td data-title="Data de publicação">{{ $livro->data_publicacao }}</td>
-                        <td data-title="categoria_id">{{ $livro->categoria->nome ?? 'Sem categoria' }}</td>
+                        <td data-title="Id">{{ $categoria->id }}</td>
+                        <td data-title="Nome">{{ $categoria->nome }}</td>
+                        <td data-title="Descricao">{{ $categoria->descricao }}</td>
                         <td>
                             <div class="botoes" style="display: flex">
-                                <form action="{{ route('livros.destroy', ['livro' => $livro->id]) }}" method="POST">
+                                <a href="{{ route('categorias.edit', ['categoria' => $categoria->id]) }}">Editar</a>
+                                <form action="{{ route('categorias.destroy', ['categoria' => $categoria->id]) }}"
+                                    method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button >Deletar</button>
+                                    <button style="margin-left: 5px;">Deletar</button>
                                 </form>
-                                <a href="{{ route('livros.edit', ['livro' => $livro->id]) }}" style="margin-left: 5px;">Editar</a>
                             </div>
                         </td>
                     </tr>

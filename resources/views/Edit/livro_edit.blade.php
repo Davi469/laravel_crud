@@ -31,7 +31,7 @@
     
 
 
-<div class="container" >
+<div class="container" style=" padding-top: 3%; margin: 0 auto;">
 	
    
 	 <div class="card">
@@ -60,6 +60,18 @@
             @endforeach
         </select>
         <label class="input-label">Editora</label>
+    </div>
+	<div class="input">
+        <select class="input-field" name="categoria_id" required>
+            <option value="">Selecione uma categoria</option>
+            @foreach ($categorias as $categoria)
+                <option value="{{ $categoria->id }}" 
+                        {{ $livro->categoria_id == $categoria->id ? 'selected' : '' }}>
+                    {{ $categoria->nome }}
+                </option>
+            @endforeach
+        </select>
+        <label class="input-label">Categoria</label>
     </div>
             <div class="input">
                 <input class="input-field" type="text" name="data_publicacao" value="{{$livro->data_publicacao}}" placeholder=" ">

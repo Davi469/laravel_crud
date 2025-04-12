@@ -18,28 +18,67 @@ input {
 .card {
 	margin: 2rem auto;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	width: 100%;
-	height: 600px;
-	max-width: 550px;
+	height: 650px;
+	max-width: 480px;
 	background-color: #FFF;
 	border-radius: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 	padding: .75rem;
 }
+.editarcategoria img{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	
+}
+.card-image img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-image {
+    flex: 1;
+	
+	overflow: hidden;
+	border-radius: 20px;
+	background-repeat: no-repeat;
+	background-size: contain; 
+    background-position: center; 
+	position: relative;
+    
+}
+.card-info {
+    padding: 1rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #8597a3;
+    a {
+        display: block;
+        color: #5a6697;
+        text-decoration: none;
+    }
+}
+
+
 
 .card-form {
-	padding: 4rem 2rem 0;
-    width: 100%;
+	padding: 2rem 2rem 4%;
+   
 }
 
 .input {
 	display: flex;
 	flex-direction: column-reverse;
 	position: relative;
-	padding-top: 1.5rem;
+	padding-top: 1.4rem;
 	&+.input {
-		margin-top: 1.5rem;
+		margin-top: 1rem;
 	}
 }
 
@@ -75,6 +114,7 @@ input {
 }
 
 .action-button {
+	text-align: center;
 	font: inherit;
 	font-size: 1.25rem;
 	padding: 1em;
@@ -88,7 +128,6 @@ input {
 		outline: 0;
 	}
 }
-
 #botao_voltar {
 	position: fixed;
 	border: 3px solid #5a669786;
@@ -96,10 +135,8 @@ input {
 	width: 90px;
 	border-radius: 10px;
 	color: #5a6697da;
-	margin-left: 28%;
+	margin-left: 330px;
 }
-
-
 
 @media (max-width: 768px) {
     .card {
@@ -115,6 +152,15 @@ input {
     .card-form {
         width: 100%;
         height: 80%;
+    }
+    .card-image {
+        height: 40%;
+        object-fit: cover;
+       
+    }
+    .card-image img {
+        
+        filter: blur(4px);
     }
 
 }

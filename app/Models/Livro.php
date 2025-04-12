@@ -15,10 +15,16 @@ class Livro extends Model
         'preco',
         'image',
         'editora_id',
+        'categoria_id',
     ];
 
     public function editora()
     {
         return $this->belongsTo(Editora::class, 'editora_id');
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id');
     }
 }

@@ -18,7 +18,7 @@
         {{ $error }}
     @endforeach
 @endif
-
+<div class="conteiner">
 <div class="card">
 <form class="card-form" action="{{ route('livros.store',)}}" method="post" enctype="multipart/form-data">
     @csrf
@@ -31,7 +31,7 @@
         <label class="input-label">Autor</label>
     </div>
     <div class="input">
-        <input class="input-field" type="text" name="data_publicacao" value="{{ old('data_publicacao')}}">
+        <input class="input-field" type="date" name="data_publicacao" value="{{ old('data_publicacao')}}">
         <label class="input-label">Data de publicação</label>
     </div>
     <div class="input">
@@ -52,6 +52,15 @@
             @endforeach
         </select>
     </div>
+    <div>
+        
+        <select name="categoria_id" id="categoria_id" required>
+            <option value="">Selecione uma Categoria</option>
+            @foreach ($categorias as $categoria)
+                <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
+            @endforeach
+        </select>
+    </div>
     
     
     <div class="action">
@@ -59,6 +68,7 @@
     </div>
     <p class="card-info">Preencha os campos acima para adicionar um novo livro ao catálogo.</p>
 </form>
+</div>
 </div>
 </body>
 </html>

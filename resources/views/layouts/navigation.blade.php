@@ -1,16 +1,17 @@
-<nav x-data="{ open: false }" class="bg-white"> <!-- Removido border-b e definido bg-white -->
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center"> <!-- Adicionado items-center para alinhamento vertical -->
-            <!-- Logo (Esquerda) -->
-            <div class="shrink-0 flex items-center font-bold text-xl">
-                <a href="{{ route('dashboard') }}" style="color: #000000">
-                   BookShop
-                </a>
-            </div>
+<nav x-data="{ open: false }" class="bg-white fixed" style=" width: 100%;">
 
-            <!-- Links Centralizados -->
-            <div class="hidden sm:flex sm:items-center sm:space-x-8 "> <!-- Centralizado -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center"> 
+            
+        <div class="shrink-0 flex items-center font-bold text-xl w-36"> 
+         <a href="{{ route('dashboard') }}">
+        <img src="/storage/livros/logo.png" alt="Logo" class="w-full h-auto object-contain">
+         </a>
+        </div>
+
+
+     
+            <div class="hidden sm:flex sm:items-center sm:space-x-8 absolute left-1/2 transform -translate-x-1/2"> 
                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-black " style="color: #000000">
                     {{ __('Início') }}
                 </x-nav-link>
@@ -23,9 +24,12 @@
                 <x-nav-link :href="route('estoques.index')" :active="request()->routeIs('estoque')" class="text-black" style="color: #000000">
                     {{ __('Estoque') }}
                 </x-nav-link>
+                <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categoria')" class="text-black" style="color: #000000">
+                    {{ __('Categoria') }}
+                </x-nav-link>
             </div>
 
-            <!-- Menu do Usuário (Direita) -->
+        
             <div class="flex items-center ">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -53,7 +57,6 @@
                 </x-dropdown>
             </div>
 
-            <!-- Hamburger Menu (Mobile) -->
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-gray-500 hover:bg-gray-100 focus:outline-none transition duration-150 ease-in-out" style="color: #000000">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" style="color: #000000">
@@ -65,7 +68,6 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-black" style="color: #000000">
@@ -82,7 +84,7 @@
             </x-responsive-nav-link>
         </div>
 
-        <!-- Responsive Settings Options -->
+
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
                 <div class="font-medium text-base text-black" style="color: #000000">{{ Auth::user()->name }}</div>
