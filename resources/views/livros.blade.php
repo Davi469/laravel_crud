@@ -76,6 +76,7 @@
                         <td data-title="Preço">{{ $livro->preco }}</td>
                         <td data-title="editora_id">{{ $livro->editora->nome ?? 'Sem editora' }}</td>
                         <td data-title="Data de publicação">{{ $livro->data_publicacao }}</td>
+                        <td data-title="categoria_id">{{ $livro->categoria->nome ?? 'Sem categoria' }}</td>
                         <td>
                             <div class="botoes" style="display: flex">
                                 <form action="{{ route('livros.destroy', ['livro' => $livro->id]) }}" method="POST">
