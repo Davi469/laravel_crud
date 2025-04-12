@@ -76,7 +76,6 @@
                         <td data-title="Preço">{{ $livro->preco }}</td>
                         <td data-title="editora_id">{{ $livro->editora->nome ?? 'Sem editora' }}</td>
                         <td data-title="Data de publicação">{{ $livro->data_publicacao }}</td>
-                        <td data-title="categoria_id">{{ $livro->categoria->nome ?? 'Sem categoria' }}</td>
                         <td>
                             <div class="botoes" style="display: flex">
                                 <form action="{{ route('livros.destroy', ['livro' => $livro->id]) }}" method="POST">
@@ -84,7 +83,7 @@
                                     @method('DELETE')
                                     <button >Deletar</button>
                                 </form>
-                                <a href="{{ route('livros.edit', ['livro' => $livro->id]) }}" style="margin-left: 5px;">Editar</a>
+                                <a href="{{ route('livros.edit', ['livro' => $livro->id]) }}" style="margin-left: 10px;">Editar</a>
                             </div>
                         </td>
                     </tr>

@@ -31,7 +31,7 @@
         <label class="input-label">Autor</label>
     </div>
     <div class="input">
-        <input class="input-field" type="date" name="data_publicacao" value="{{ old('data_publicacao')}}">
+        <input class="input-field" type="text" name="data_publicacao" value="{{ old('data_publicacao')}}">
         <label class="input-label">Data de publicação</label>
     </div>
     <div class="input">
