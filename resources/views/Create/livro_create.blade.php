@@ -30,10 +30,9 @@
         <input class="input-field" type="text" name="autor" value="{{ old('autor')}}">
         <label class="input-label">Autor</label>
     </div>
+    <input class="input-field" type="date" name="data_publicacao"
+        value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('Y-m-d') : '') }}">
     <div class="input">
-        <input class="input-field" type="text" name="data_publicacao" value="{{ old('data_publicacao')}}">
-        <label class="input-label">Data de publicação</label>
-    </div>
     <div class="input">
         <input class="input-field" type="text" name="preco" value="{{ old('preco')}}">
         <label class="input-label">Preço</label>
