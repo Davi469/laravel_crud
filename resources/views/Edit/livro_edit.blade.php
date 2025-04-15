@@ -73,14 +73,44 @@
         </select>
         <label class="input-label">Categoria</label>
     </div>
-            <div class="input">
-                <input class="input-field" type="text" name="data_publicacao" value="{{$livro->data_publicacao}}" placeholder=" ">
-				<label class="input-label">Data de publicação</label>
-			</div>
-            <div class="input">
-                <input class="input-field" type="text" name="preco" value="{{$livro->preco}}" placeholder=" ">
-				<label class="input-label">Preço</label>
-			</div>
+
+    <div class="input">
+        <input class="input-field" type="text" name="data_publicacao" value="{{ \Carbon\Carbon::parse($livro->data_publicacao)->format('d/m/Y') }}"placeholder=" ">
+        <label class="input-label">Data de Publicação</label>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector('input[name="data_publicacao"]');
+    
+            input.addEventListener('input', function(e) {
+                let v = input.value.replace(/\D/g, '');
+                if (v.length >= 2) v = v.slice(0, 2) + '/' + v.slice(2);
+                if (v.length >= 5) v = v.slice(0, 5) + '/' + v.slice(5, 9);
+                input.value = v;
+            });
+        });
+    </script>
+        
+
+    <div class="input">
+        <input class="input-field" type="text" name="preco" value="{{ number_format((float) str_replace(',', '.', $livro->preco), 2, ',', '.') }}" placeholder=" ">
+        <label class="input-label">Preço</label>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const precoInput = document.querySelector('input[name="preco"]');
+
+        precoInput.addEventListener('input', function () {
+            let valor = precoInput.value.replace(/\D/g, '');
+            valor = (parseInt(valor, 10) / 100).toFixed(2);
+            valor = valor.replace('.', ',');
+            valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            precoInput.value = valor;
+        });
+    });
+    </script>
+
 			<div class="action">
 				
 				<button type="submit" class="action-button">Atualizar</button>

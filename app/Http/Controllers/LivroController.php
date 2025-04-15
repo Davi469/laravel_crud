@@ -86,6 +86,18 @@ class LivroController extends Controller
 
     public function update(StoreUpdateLivro $request, string $id)
     {
+        $dataFormatada = \Carbon\Carbon::createFromFormat('d/m/Y', $request->data_publicacao)->format('Y-m-d');
+
+    
+        $precoFormatado = str_replace(',', '.', $request->preco);
+
+    
+        $request->merge([
+            'data_publicacao' => $dataFormatada,
+            'preco' => $precoFormatado,
+        ]);
+
+
         $updated = $this->livro->where('id', $id)->update($request->except(['_token', '_method']));
 
         if ($updated) {
