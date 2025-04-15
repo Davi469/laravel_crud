@@ -33,13 +33,31 @@
                         <input class="input-field" type="text" name="autor" value="{{ old('autor') }}">
                         <label class="input-label">Autor</label>
                     </div>
-                    <input class="input-field" type="date" name="data_publicacao"
-                        value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('Y-m-d') : '') }}" style="width: 100%; margin: 4% 0%;">
+
+                    <div  class="input">
+                        <input class="input-field" type="date" name="data_publicacao" value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('Y-m-d') : '') }}" style="width: 100%; margin: 4% 0%;">
+                        <label class="input-label">Data de Publicação</label>
+                    </div>
+                    
 
                     <div class="input">
                         <input class="input-field" type="text" name="preco" value="{{ old('preco') }}">
                         <label class="input-label">Preço</label>
                     </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const precoInput = document.querySelector('input[name="preco"]');
+
+                            precoInput.addEventListener('input', function () {
+                                let valor = precoInput.value.replace(/\D/g, '');
+                                valor = (parseInt(valor, 10) / 100).toFixed(2);
+                                valor = valor.replace('.', ',');
+                                valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                                precoInput.value = valor;
+                            });
+                        });
+                    </script>
 
                     <div class="input">
                         <input id="selecao" class="image-input" type="file" name="image"
