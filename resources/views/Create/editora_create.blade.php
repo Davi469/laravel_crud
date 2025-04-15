@@ -2,27 +2,18 @@
     <link href="/css/criar.css" rel="stylesheet" type="text/css" />
 
     <div class="p-6">
-        @if (session()->has('message'))
-            <div class="text-green-500 mb-4">
-                {{ session()->get('message') }}
-            </div>
-        @endif
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
         <div class="conteiner">
             <div class="card">
                 <form class="card-form" action="{{ route('editoras.store') }}" method="post">
                     @csrf
-
+                    @if ($errors->any())
+                    <div
+                        class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-3 rounded-lg mb-4">
+                        @foreach ($errors->all() as $error)
+                            <p class="text-sm font-semibold">{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
                     <div class="input">
                         <input class="input-field" type="text" name="nome" value="{{ old('nome') }}">
                         <label class="input-label">Nome</label>

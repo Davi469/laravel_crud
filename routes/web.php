@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $totalLivros = Livro::count();
-    $livrosRecentes = Livro::orderBy('created_at', 'desc')->take(4)->get();
+    $livrosRecentes = Livro::orderBy('created_at', 'desc')->take(3)->get();
     return view('dashboard', compact('totalLivros', 'livrosRecentes'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 

@@ -13,14 +13,7 @@
     </head>
 
     <body>
-        @if (session()->has('message'))
-            {{ session()->get('message') }}
-        @endif
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                {{ $error }}
-            @endforeach
-        @endif
+      
 
         <div class="container" style=" padding-top: 3%; margin: 0 auto;">
 
@@ -32,6 +25,14 @@
                 <form class="card-form" action="{{ route('categorias.update', ['categoria' => $categoria->id]) }}"
                     method="post">
                     @csrf
+                    @if ($errors->any())
+                    <div
+                        class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-3 rounded-lg mb-4">
+                        @foreach ($errors->all() as $error)
+                            <p class="text-sm font-semibold">{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
                     <input type="hidden" name="_method" value="PUT">
                     <div class="input">
                         <input class="input-field" type="text" name="nome" value="{{ $categoria->nome }}"

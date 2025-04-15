@@ -28,18 +28,11 @@ class StoreUpdateLivro extends FormRequest
                 'min:2',
                 'max:30',
             ],
-            'data_publicacao' => [
-                'required',
-                'min:6',
-                'max:20',
-            ],
-            'preco' => [
-                'required',
-                'min:2',
-                'max:10',
-            ],
+            'data_publicacao' => ['required', 'date_format:Y-m-d'],
+           'preco' => 'required',
             'editora_id' => 'required',
             'categoria_id' => 'required',
+            'image' => 'required',            
         ];
     }
 }

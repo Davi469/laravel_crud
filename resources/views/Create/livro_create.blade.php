@@ -12,16 +12,18 @@
     </head>
 
     <body>
-        @if (session()->has('message'))
-            {{ session()->get('message') }}
-        @endif
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                {{ $error }}
-            @endforeach
-        @endif
+
+
         <div class="conteiner">
             <div class="card">
+                @if ($errors->any())
+                    <div
+                        class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-3 rounded-lg mb-4">
+                        @foreach ($errors->all() as $error)
+                            <p class="text-sm font-semibold">{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
                 <form class="card-form" action="{{ route('livros.store') }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
@@ -34,11 +36,13 @@
                         <label class="input-label">Autor</label>
                     </div>
 
-                    <div  class="input">
-                        <input class="input-field" type="date" name="data_publicacao" value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('Y-m-d') : '') }}" style="width: 100%; margin: 4% 0%;">
+                    <div class="input">
+                        <input class="input-field" type="date" name="data_publicacao"
+                            value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('Y-m-d') : '') }}"
+                            style="width: 100%; margin: 2% 0%;">
                         <label class="input-label">Data de Publicação</label>
                     </div>
-                    
+
 
                     <div class="input">
                         <input class="input-field" type="text" name="preco" value="{{ old('preco') }}">
@@ -46,10 +50,10 @@
                     </div>
 
                     <script>
-                        document.addEventListener('DOMContentLoaded', function () {
+                        document.addEventListener('DOMContentLoaded', function() {
                             const precoInput = document.querySelector('input[name="preco"]');
 
-                            precoInput.addEventListener('input', function () {
+                            precoInput.addEventListener('input', function() {
                                 let valor = precoInput.value.replace(/\D/g, '');
                                 valor = (parseInt(valor, 10) / 100).toFixed(2);
                                 valor = valor.replace('.', ',');
