@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUpdateLivro extends FormRequest
+class StoreUpdateLivrosCreate extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,10 +28,11 @@ class StoreUpdateLivro extends FormRequest
                 'min:2',
                 'max:30',
             ],
-            'data_publicacao' => ['required', 'date_format:d/m/Y'],
+            'data_publicacao' => ['required', 'date_format:Y-m-d'],
             'preco' => 'required',
             'editora_id' => 'required',
             'categoria_id' => 'required',
+            'image' => 'required',
         ];
     }
 }

@@ -31,18 +31,6 @@
                 </div>
                 <form class="card-form" action="{{ route('livros.update', ['livro' => $livro->id]) }}" method="post">
                     @csrf
-                    @if (session()->has('message'))
-                        <div
-                            class="bg-green-100 dark:bg-green-900 border-l-4 border-green-500 dark:border-green-700 text-green-900 dark:text-green-100 p-3 rounded-lg mb-4 flex items-center">
-                            <svg class="h-5 w-5 mr-2 text-green-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <p class="text-sm font-semibold">{{ session('message') }}</p>
-                        </div>
-                    @endif
-
                     @if ($errors->any())
                         <div
                             class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-3 rounded-lg mb-4">

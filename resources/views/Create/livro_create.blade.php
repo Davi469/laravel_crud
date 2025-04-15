@@ -38,7 +38,7 @@
 
                     <div class="input">
                         <input class="input-field" type="date" name="data_publicacao"
-                            value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('Y-m-d') : '') }}"
+                            value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('d/m/Y') : '') }}"
                             style="width: 100%; margin: 2% 0%;">
                         <label class="input-label">Data de Publicação</label>
                     </div>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StoreUpdateLivrosCreate;
 use App\Models\Editora;
 
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class LivroController extends Controller
     }
     
 
-    public function store(StoreUpdateLivro $request)
+    public function store(StoreUpdateLivrosCreate $request)
     {
 
         if ($request->hasFile('image')) {
