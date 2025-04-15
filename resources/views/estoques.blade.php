@@ -13,6 +13,10 @@
     </head>
 
     <body>
+        <div id="bannerestoque" style="padding-top: 65px">
+            <img src="/storage/livros/bannerestoque.png" alt="" class=" rounded-2xl" style=" width: 70%; margin: 0 auto;">
+        </div>
+
         <div class="home-section">
             <div id="tabela">
 

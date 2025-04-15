@@ -14,6 +14,11 @@
     </head>
 
     <body>
+        <div id="bannercategoria" style="padding-top: 65px">
+            <img src="/storage/livros/bannercategoria.png" alt="" class=" rounded-2xl" style=" width: 70%; margin: 0 auto;">
+        </div>
+
+    
        
         <div class="main conteiner" id="main"></div>
         <div id="tabela">
