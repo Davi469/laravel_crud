@@ -12,13 +12,11 @@
     width: 100%;
 }
 #conteiner {
-    padding-top: 70px;
+    padding-top: 10px;
     margin: 0 15%;
 }
 
-#button {
-    margin-bottom: 20px;
-}
+
 #bannerlivros {
     height: 20%;
     margin: 0 auto;
