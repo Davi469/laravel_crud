@@ -65,7 +65,7 @@ class EditoraController extends Controller
         
         if($updated) {
             $editoras = Editora::all(); 
-            return view('editoras', ['editoras' => $editoras]);
+            return redirect()->route('editoras.index')->with('atualizado', 'Estoque atualizado com sucesso!');
         }
         return redirect()->back()->with('message', 'Erro ao atualizar!');
     }

@@ -70,7 +70,7 @@ class EstoqueController extends Controller
 
         if ($updated) {
             $estoques = Estoque::all();
-            return view('estoques', ['estoques' => $estoques]);
+            return redirect()->route('estoques.index')->with('atualizado', 'Estoque atualizado com sucesso!');
         }
         return redirect()->back()->with('message', 'Erro ao atualizar!');
     }

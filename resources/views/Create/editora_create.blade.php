@@ -16,22 +16,22 @@
                 @endif
                     <div class="input">
                         <input class="input-field" type="text" name="nome" value="{{ old('nome') }}">
-                        <label class="input-label">Nome</label>
+                        <label class="input-label">Nome*</label>
                     </div>
 
                     <div class="input">
-                        <input class="input-field" type="text" name="telefone" value="{{ old('telefone') }}">
-                        <label class="input-label">Telefone</label>
+                        <input id="telefone_editora" class="input-field" type="text" name="telefone" value="{{ old('telefone') }}">
+                        <label class="input-label">Telefone*</label>
                     </div>
 
                     <div class="input">
                         <input class="input-field" type="text" name="email" value="{{ old('email') }}">
-                        <label class="input-label">Email</label>
+                        <label class="input-label">Email*</label>
                     </div>
 
                     <div class="input">
                         <input class="input-field" type="text" name="site" value="{{ old('site') }}">
-                        <label class="input-label">Site</label>
+                        <label class="input-label">Site*</label>
                     </div>
 
                     <div class="action">
@@ -43,4 +43,24 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('telefone_editora').addEventListener('input', function(event) {
+            let input = event.target.value;
+
+            input = input.replace(/\D/g, '');
+
+            if (input.length > 11) {
+                input = input.substring(0, 11);
+            }
+            if (input.length <= 2) {
+                input = input.replace(/^(\d{0,2})/, '($1');
+            } else if (input.length <= 7) {
+                input = input.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+            } else {
+                input = input.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+            }
+
+            event.target.value = input;
+        });
+       </script>
 </x-app-layout>

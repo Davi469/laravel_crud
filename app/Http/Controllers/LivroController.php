@@ -103,7 +103,7 @@ class LivroController extends Controller
 
         if ($updated) {
             $livros = Livro::all();
-            return view('livros', ['livros' => $livros]);
+            return redirect()->route('livros.index')->with('atualizado', 'Livro atualizado com sucesso!');
         }
         return redirect()->back()->with('message', 'Erro ao atualizar!');
     }

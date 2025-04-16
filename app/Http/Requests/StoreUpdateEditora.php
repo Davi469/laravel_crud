@@ -23,7 +23,7 @@ class StoreUpdateEditora extends FormRequest
 {
     return [
         'nome' => 'required|string|min:3|max:100',
-        'telefone' => 'required|regex:/^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/',
+        'telefone' => 'required',
         'email' => 'required|email|max:100',
         'site' => 'required|url|max:100',
     ];

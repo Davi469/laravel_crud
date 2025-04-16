@@ -30,11 +30,11 @@
                 @endif
                     <div class="input">
                         <input class="input-field" type="text" name="nome" value="{{ old('nome') }}">
-                        <label class="input-label">Nome</label>
+                        <label class="input-label">Nome*</label>
                     </div>
                     <div class="input">
                         <input class="input-field" type="text" name="descricao" value="{{ old('descricao') }}">
-                        <label class="input-label">Descrição</label>
+                        <label class="input-label">Descrição*</label>
                     </div>
                     <div class="action">
                         <button type="submit" class="action-button">Adicionar</button>

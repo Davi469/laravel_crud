@@ -3,6 +3,10 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
+        <div class="w-full h-64 overflow-hidden px- pt-16 mb-4">
+            <img src="/storage/livros/bannerlogin.png" alt="Banner Login"
+                 class="w-full h-full object-cover rounded-2xl mx-auto rounded-lg">
+        </div>               
         @csrf
 
         <!-- Email Address -->

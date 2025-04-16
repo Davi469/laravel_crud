@@ -26,7 +26,7 @@
                 @endif
                     <div>
                         <select name="livro_id" id="livro_id" required>
-                            <option value="">Selecione um livro</option>
+                            <option value="">Selecione um livro*</option>
                             @foreach ($livros as $livro)
                                 <option value="{{ $livro->id }}">{{ $livro->nome }}</option>
                             @endforeach
@@ -34,18 +34,18 @@
                     </div>
                     <div>
                         <select name="tipo" id="tipo_id" required>
-                            <option value="">Selecione o tipo</option>
+                            <option value="">Selecione o tipo*</option>
                             <option value="Entrada">Entrada</option>
                             <option value="Saida">Saida</option>
                         </select>
                     </div>
                     <div class="input">
                         <input class="input-field" type="text" name="quantidade" value="{{ old('quantidade') }}">
-                        <label class="input-label">Quantidade</label>
+                        <label class="input-label">Quantidade*</label>
                     </div>
                     <div class="input">
                         <input class="input-field" type="text" name="responsavel" value="{{ old('responsavel') }}">
-                        <label class="input-label">Responsavel</label>
+                        <label class="input-label">Responsável*</label>
                     </div>
                     <div class="action">
                         <button type="submit" class="action-button">Adicionar</button>

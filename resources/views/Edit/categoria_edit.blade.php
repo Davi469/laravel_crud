@@ -40,7 +40,7 @@
                         <label class="input-label">Nome</label>
                     </div>
                     <div class="input">
-                        <input class="input-field" type="text" name="telefone" value="{{ $categoria->descricao }}"
+                        <input class="input-field" type="text" name="descricao" value="{{ $categoria->descricao }}"
                             placeholder=" ">
                         <label class="input-label">Descrição</label>
                     </div>

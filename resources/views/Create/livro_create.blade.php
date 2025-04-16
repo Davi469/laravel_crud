@@ -29,24 +29,24 @@
                     @csrf
                     <div class="input">
                         <input class="input-field" type="text" name="nome" value="{{ old('nome') }}">
-                        <label class="input-label">Titulo</label>
+                        <label class="input-label">Titulo*</label>
                     </div>
                     <div class="input">
                         <input class="input-field" type="text" name="autor" value="{{ old('autor') }}">
-                        <label class="input-label">Autor</label>
+                        <label class="input-label">Autor*</label>
                     </div>
 
                     <div class="input">
                         <input class="input-field" type="date" name="data_publicacao"
                             value="{{ old('data_publicacao', isset($livro) ? \Carbon\Carbon::parse($livro->data_publicacao)->format('d/m/Y') : '') }}"
                             style="width: 100%; margin: 2% 0%;">
-                        <label class="input-label">Data de Publicação</label>
+                        <label class="input-label">Data de Publicação*</label>
                     </div>
 
 
                     <div class="input">
                         <input class="input-field" type="text" name="preco" value="{{ old('preco') }}">
-                        <label class="input-label">Preço</label>
+                        <label class="input-label">Preço*</label>
                     </div>
 
                     <script>
@@ -66,12 +66,12 @@
                     <div class="input">
                         <input id="selecao" class="image-input" type="file" name="image"
                             value="{{ old('image') }}">
-                        <label for="selecao" id="label">Imagem</label>
+                        <label for="selecao" id="label">Imagem*</label>
                     </div>
                     <div>
 
                         <select name="editora_id" id="editora_id" required>
-                            <option value="">Selecione uma editora</option>
+                            <option value="">Selecione uma editora*</option>
                             @foreach ($editoras as $editora)
                                 <option value="{{ $editora->id }}">{{ $editora->nome }}</option>
                             @endforeach
@@ -80,7 +80,7 @@
                     <div>
 
                         <select name="categoria_id" id="categoria_id" required>
-                            <option value="">Selecione uma Categoria</option>
+                            <option value="">Selecione uma Categoria*</option>
                             @foreach ($categorias as $categoria)
                                 <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
                             @endforeach

@@ -63,7 +63,7 @@ class CategoriaController extends Controller
         
         if($updated) {
             $categorias = Categoria::all(); 
-            return view('categorias', ['categorias' => $categorias]);
+            return redirect()->route('categorias.index')->with('atualizado', 'Categoria atualizada com sucesso!');
         }
         return redirect()->back()->with('message', 'Erro ao atualizar!');
     }

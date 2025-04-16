@@ -23,7 +23,7 @@ class StoreUpdateCategoria extends FormRequest
     {
         return [
             'nome' => 'required|min:3|max:50',
-            'descricao' => 'required|min:11|max:1000',
+            'descricao' => 'required|min:11|max:100000',
         ];
     }
 }
